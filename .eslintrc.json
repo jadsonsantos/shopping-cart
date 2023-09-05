@@ -13,7 +13,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "simple-import-sort"
     ],
     "rules": {
         "indent": [
@@ -39,6 +40,8 @@
         "eol-last": [
             "error",
             "always"
-        ]
+        ],
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
     }
 }
