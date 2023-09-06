@@ -6,10 +6,10 @@ import { BsSearch } from 'react-icons/bs'
 import useSearchBar from './useSearchBar'
 
 const SearchBar = () => {
-  const { searchValue, setSearchValue } = useSearchBar()
+  const { searchValue, setSearchValue, handleSearch } = useSearchBar()
 
   return (
-    <form className="search-bar">
+    <form className="search-bar" onSubmit={handleSearch}>
       <input
         type="search"
         className="search__input"
