@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
-
-import fetchProducts from '../../api/fetchProducts'
+import fetchProducts from 'api/fetchProducts'
+import AppContext from 'contexts/AppContext'
+import { useContext, useEffect } from 'react'
 
 const useProducts = () => {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const { setProducts, setLoading } = useContext(AppContext)
 
   useEffect(() => {
     fetchProducts('celular').then((response) => {
@@ -12,8 +11,6 @@ const useProducts = () => {
       setLoading(false)
     })
   }, [])
-
-  return { products, loading }
 }
 
 export default useProducts
