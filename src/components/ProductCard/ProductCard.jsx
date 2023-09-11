@@ -12,8 +12,12 @@ const ProductCard = ({ data }) => {
   const { cartItems, setCartItems, setIsCartVisible } = useContext(AppContext)
 
   const handleAddCart = () => {
-    setCartItems([...cartItems, data])
-    setIsCartVisible(true)
+    const productAddedToCart = cartItems.includes(data)
+
+    if (!productAddedToCart) {
+      setCartItems([...cartItems, data])
+      setIsCartVisible(true)
+    }
   }
 
   return (
