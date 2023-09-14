@@ -8,6 +8,8 @@ const Provider = ({ children }) => {
   const [cartItems, setCartItems] = useState([])
   const [loading, setLoading] = useState(true)
   const [isCartVisible, setIsCartVisible] = useState(false)
+  const [searchValue, setSearchValue] = useState('')
+  const [searchResults, setSearchResults] = useState('')
 
   const value = {
     products,
@@ -17,7 +19,11 @@ const Provider = ({ children }) => {
     cartItems,
     setCartItems,
     isCartVisible,
-    setIsCartVisible
+    setIsCartVisible,
+    searchValue,
+    setSearchValue,
+    searchResults,
+    setSearchResults
   }
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
