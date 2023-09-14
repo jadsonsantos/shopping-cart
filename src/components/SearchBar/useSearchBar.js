@@ -1,10 +1,15 @@
 import fetchProducts from 'api/fetchProducts'
 import AppContext from 'contexts/AppContext'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 
 const useSearchBar = () => {
-  const [searchValue, setSearchValue] = useState('')
-  const { setProducts, setLoading } = useContext(AppContext)
+  const {
+    setProducts,
+    setLoading,
+    searchValue,
+    setSearchValue,
+    setSearchResults
+  } = useContext(AppContext)
 
   const handleSearch = async (event) => {
     event.preventDefault()
@@ -12,6 +17,7 @@ const useSearchBar = () => {
     const products = await fetchProducts(searchValue)
     setProducts(products)
     setLoading(false)
+    setSearchResults(searchValue)
     setSearchValue('')
   }
 
