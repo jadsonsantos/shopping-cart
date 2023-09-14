@@ -9,10 +9,10 @@ import useProducts from './useProducts'
 
 const Products = () => {
   useProducts()
-  const { products } = useContext(AppContext)
+  const { loading, products } = useContext(AppContext)
 
   return (
-    (true && <Loading />) || (
+    (loading && <Loading />) || (
       <section className="products container">
         {products.map((product) => (
           <ProductCard key={product.id} data={product} />
