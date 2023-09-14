@@ -4,7 +4,11 @@ import React from 'react'
 import { BiLoaderAlt } from 'react-icons/bi'
 
 const Loading = () => {
-  return <BiLoaderAlt className="loading" />
+  return (
+    <div className="loading">
+      <BiLoaderAlt className="loading__icon" />
+    </div>
+  )
 }
 
 export default Loading

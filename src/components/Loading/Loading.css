@@ -1,6 +1,12 @@
 .loading {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loading__icon {
   font-size: 2rem;
-  margin: 200px auto 0;
   width: 100%;
   animation: spin 1s linear infinite;
 }
