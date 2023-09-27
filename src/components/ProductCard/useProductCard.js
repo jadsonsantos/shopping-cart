@@ -9,8 +9,8 @@ const useProductCard = (data) => {
 
     if (!productAddedToCart) {
       setCartItems([...cartItems, data])
-      setIsCartVisible(true)
     }
+    setIsCartVisible(true)
   }
 
   return { handleAddCart }
