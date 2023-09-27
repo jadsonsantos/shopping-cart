@@ -1,24 +1,15 @@
 import './ProductCard.css'
 
-import AppContext from 'contexts/AppContext'
 import propTypes from 'prop-types'
-import React, { useContext } from 'react'
+import React from 'react'
 import { BsFillCartPlusFill } from 'react-icons/bs'
 
 import formatCurrency from '../../utils/formatCurrency'
+import useProductCard from './useProductCard'
 
 const ProductCard = ({ data }) => {
   const { title, price, thumbnail } = data
-  const { cartItems, setCartItems, setIsCartVisible } = useContext(AppContext)
-
-  const handleAddCart = () => {
-    const productAddedToCart = cartItems.includes(data)
-
-    if (!productAddedToCart) {
-      setCartItems([...cartItems, data])
-      setIsCartVisible(true)
-    }
-  }
+  const { handleAddCart } = useProductCard(data)
 
   return (
     <section className="product-card">
