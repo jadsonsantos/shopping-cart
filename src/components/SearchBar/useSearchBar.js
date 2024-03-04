@@ -1,6 +1,7 @@
+import { useContext } from 'react'
+
 import fetchProducts from 'api/fetchProducts'
 import AppContext from 'contexts/AppContext'
-import { useContext } from 'react'
 
 const useSearchBar = () => {
   const {

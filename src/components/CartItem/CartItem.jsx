@@ -1,9 +1,11 @@
 import './CartItem.css'
 
-import AppContext from 'contexts/AppContext'
-import propTypes from 'prop-types'
 import React, { useContext } from 'react'
 import { BsFillCartDashFill } from 'react-icons/bs'
+
+import propTypes from 'prop-types'
+
+import AppContext from 'contexts/AppContext'
 import formatCurrency from 'utils/formatCurrency'
 
 const CartItem = ({ data }) => {

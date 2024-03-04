@@ -1,7 +1,8 @@
 import './Products.css'
 
-import AppContext from 'contexts/AppContext'
 import React, { useContext } from 'react'
+
+import AppContext from 'contexts/AppContext'
 
 import Loading from '../Loading/Loading'
 import ProductCard from '../ProductCard/ProductCard'

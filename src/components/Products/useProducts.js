@@ -1,6 +1,7 @@
+import { useContext, useEffect } from 'react'
+
 import fetchProducts from 'api/fetchProducts'
 import AppContext from 'contexts/AppContext'
-import { useContext, useEffect } from 'react'
 
 const useProducts = () => {
   const { setProducts, setLoading } = useContext(AppContext)

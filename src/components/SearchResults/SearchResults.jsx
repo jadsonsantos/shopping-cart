@@ -1,7 +1,8 @@
 import './SearchResults.css'
 
-import AppContext from 'contexts/AppContext'
 import React, { useContext } from 'react'
+
+import AppContext from 'contexts/AppContext'
 
 const SearchResults = () => {
   const { products, searchResults } = useContext(AppContext)

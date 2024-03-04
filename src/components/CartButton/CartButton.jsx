@@ -1,8 +1,9 @@
 import './CartButton.css'
 
-import AppContext from 'contexts/AppContext'
 import React, { useContext } from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+
+import AppContext from 'contexts/AppContext'
 
 const CartButton = () => {
   const { cartItems, isCartVisible, setIsCartVisible } = useContext(AppContext)

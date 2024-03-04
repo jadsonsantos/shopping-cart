@@ -1,5 +1,6 @@
-import AppContext from 'contexts/AppContext'
 import { useContext } from 'react'
+
+import AppContext from 'contexts/AppContext'
 
 const useProductCard = (data) => {
   const { cartItems, setCartItems, setIsCartVisible } = useContext(AppContext)
