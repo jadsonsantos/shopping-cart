@@ -15,7 +15,8 @@ const Cart = () => {
   useEffect(() => {
     const itemsFromLocalStorage = localStorage.getItem('@cartItems')
 
-    setCartItems(JSON.parse(itemsFromLocalStorage))
+    if (itemsFromLocalStorage.length > 0)
+      setCartItems(JSON.parse(itemsFromLocalStorage))
   }, [])
 
   useEffect(() => {
