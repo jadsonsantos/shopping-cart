@@ -14,11 +14,13 @@ const Products = () => {
 
   return (
     (loading && <Loading />) || (
-      <section className="products container">
-        {products.map((product) => (
-          <ProductCard key={product.id} data={product} />
-        ))}
-      </section>
+      <div className="container">
+        <section className="products">
+          {products.map((product) => (
+            <ProductCard key={product.id} data={product} />
+          ))}
+        </section>
+      </div>
     )
   )
 }
