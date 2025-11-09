@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -10,9 +11,17 @@
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "plugins": ["react", "eslint-plugin-import-helpers"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
@@ -20,6 +29,7 @@
     "semi": ["error", "never"],
     "jsx-quotes": [2, "prefer-double"],
     "eol-last": ["error", "always"],
+    "react/react-in-jsx-scope": "off",
     "import-helpers/order-imports": [
       "warn",
       {
@@ -36,5 +46,21 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.js",
+        "**/*.test.jsx",
+        "**/__tests__/**/*.js",
+        "**/__tests__/**/*.jsx"
+      ],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import-helpers/order-imports": "off"
+      }
+    }
+  ]
 }
