@@ -14,12 +14,23 @@ const useSearchBar = () => {
 
   const handleSearch = async (event) => {
     event.preventDefault()
-    setLoading(true)
-    const products = await fetchProducts(searchValue)
-    setProducts(products)
-    setLoading(false)
-    setSearchResults(searchValue)
-    setSearchValue('')
+
+    if (!searchValue.trim()) {
+      return
+    }
+
+    try {
+      setLoading(true)
+      const products = await fetchProducts(searchValue)
+      setProducts(Array.isArray(products) ? products : [])
+      setSearchResults(searchValue)
+      setSearchValue('')
+    } catch (error) {
+      console.error('Error searching products:', error)
+      setProducts([])
+    } finally {
+      setLoading(false)
+    }
   }
 
   return { searchValue, setSearchValue, handleSearch }
