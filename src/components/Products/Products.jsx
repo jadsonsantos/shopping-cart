@@ -12,16 +12,28 @@ const Products = () => {
   useProducts()
   const { loading, products } = useContext(AppContext)
 
-  return (
-    (loading && <Loading />) || (
+  if (loading) {
+    return <Loading />
+  }
+
+  if (!products || !Array.isArray(products) || products.length === 0) {
+    return (
       <div className="container">
         <section className="products">
-          {products.map((product) => (
-            <ProductCard key={product.id} data={product} />
-          ))}
+          <p>Nenhum produto encontrado.</p>
         </section>
       </div>
     )
+  }
+
+  return (
+    <div className="container">
+      <section className="products">
+        {products.map((product) => (
+          <ProductCard key={product.id} data={product} />
+        ))}
+      </section>
+    </div>
   )
 }
 
